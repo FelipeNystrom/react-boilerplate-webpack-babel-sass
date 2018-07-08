@@ -1,1 +1,1 @@
-React boilerplate with sass and webpack 4. There is 3 scripts where 2 is production. Always run the script npm run prod before executing the script called npm run pre-prod.
+React boilerplate with sass and webpack 4. There is three scripts where two is for production. Always run the script npm run prod before executing the script called npm run pre-prod. Npm run dev script fires up webpack-dev-server with hot-reloading active (updates on ctrl-s).
