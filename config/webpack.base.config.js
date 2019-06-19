@@ -5,7 +5,7 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.js$/,
+        test: /\.(js|jsx)$/,
         exclude: /node_modules/,
         use: {
           loader: 'babel-loader'
@@ -17,6 +17,14 @@ module.exports = {
           fallback: 'style-loader',
           use: 'css-loader!sass-loader'
         })
+      },
+      {
+        test: /\.html$/,
+        use: [
+          {
+            loader: 'html-loader'
+          }
+        ]
       }
     ]
   },
@@ -25,6 +33,9 @@ module.exports = {
       template: './src/index.html',
       filename: './index.html'
     }),
-    new ExtractTextPlugin('style.css')
+    new ExtractTextPlugin({
+      filename: 'style.scss',
+      allChunks: true
+    })
   ]
 };
